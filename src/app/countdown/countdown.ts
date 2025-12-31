@@ -42,8 +42,8 @@ export class Countdown {
   private timerSub!: Subscription;
 
   // --- AUDIO SETUP ---
-  private tickSound = new Audio('./audio/rupee-tick.wav');
-  private openChestSound = new Audio('./audio/chest-open.ogg');
+  private tickSound = new Audio('./zelda-countdown/audio/rupee-tick.wav');
+  private openChestSound = new Audio('./zelda-countdown/audio/chest-open.ogg');
   // We need a reference to the listener function to be able to remove it later
   private navigateOnSoundEnd = () => this.router.navigate(['/reward']);
 
