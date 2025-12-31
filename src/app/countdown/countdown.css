@@ -1,0 +1,217 @@
+.container {
+  width: 100%;
+  max-width: 400px; /* Mobile width */
+  background: var(--zelda-bg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--zelda-gold);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+  }
+
+  .location-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    text-shadow: 0 2px 4px black;
+
+    small {
+      display: block;
+      color: var(--zelda-gold);
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+    }
+    span {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin: 10px 0;
+  
+  .highlight {
+    color: var(--zelda-gold);
+  }
+}
+
+.subtitle {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: -10px;
+}
+
+/* Triforce CSS Shape */
+.triforce {
+  margin: 20px 0;
+  position: relative;
+  width: 60px; height: 50px;
+  
+  .tri {
+    position: absolute;
+    width: 0; height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 18px solid var(--zelda-gold);
+  }
+  .top { left: 20px; top: 0; }
+  .left { left: 10px; top: 18px; }
+  .right { left: 30px; top: 18px; }
+}
+
+.timer-grid {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+
+  .time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .circle {
+      border: 1px solid var(--zelda-gold);
+      color: var(--zelda-gold);
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      box-shadow: var(--zelda-glow);
+    }
+    
+    span {
+      font-size: 0.6rem;
+      color: #888;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.quote-box {
+  border-left: 2px solid var(--zelda-gold);
+  padding-left: 15px;
+  text-align: left;
+  margin: 10px 0 30px;
+  font-style: italic;
+  color: #ccc;
+}
+
+.chest-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  // Disabled State
+  background-color: #333;
+  color: #666;
+  cursor: not-allowed;
+
+  // Active State
+  &.active {
+    background-color: var(--zelda-gold);
+    color: var(--zelda-bg);
+    box-shadow: var(--zelda-glow);
+    cursor: pointer;
+    
+    &:hover {
+      background-color: white;
+      transform: scale(1.02);
+    }
+  }
+}
+
+.start-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--zelda-bg);
+  z-index: 100; /* Sit on top of everything */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+
+  .sheikah-eye {
+    font-size: 4rem;
+    color: var(--zelda-gold);
+    margin-bottom: 20px;
+    text-shadow: var(--zelda-glow);
+  }
+
+  h1 {
+    font-family: var(--font-serif);
+    color: var(--zelda-gold);
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+  }
+
+  .start-btn {
+    background: transparent;
+    border: 2px solid var(--zelda-gold);
+    color: var(--zelda-gold);
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-family: var(--font-sans);
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: var(--zelda-gold);
+      color: var(--zelda-bg);
+      box-shadow: var(--zelda-glow);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

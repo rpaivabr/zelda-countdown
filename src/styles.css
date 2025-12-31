@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --zelda-bg: #1C1A15;         /* Dark brownish black */
+  --zelda-gold: #E6C84F;       /* Primary UI Gold */
+  --zelda-gold-dim: #947F30;   /* Dimmed gold for disabled states */
+  --zelda-glow: 0 0 10px rgba(230, 200, 79, 0.5);
+  --zelda-white: #F5F5F5;
+  --font-serif: 'Cinzel', serif;
+  --font-sans: 'Lato', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--zelda-bg);
+  color: var(--zelda-white);
+  font-family: var(--font-sans);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}

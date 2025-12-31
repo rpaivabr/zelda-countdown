@@ -1,0 +1,74 @@
+<div class="container">
+  
+  <!-- === NEW: START SCREEN === -->
+  <!-- Only visible if NOT started yet -->
+  <div class="start-overlay" *ngIf="!hasStarted()">
+    <div class="sheikah-eye">👁️</div>
+    <h1>Sheikah Slate<br>System Boot</h1>
+    <button class="start-btn" (click)="initialize()">
+      Initialize Timer
+    </button>
+  </div>
+
+  <!-- === EXISTING CONTENT (Wrapped in else block or simple hidden check) === -->
+  <!-- We hide this div instead of removing it from DOM to keep layout stable if you prefer, 
+       but *ngIf is better for logic. -->
+  <div class="main-interface" *ngIf="hasStarted()">
+    
+    <header>
+      <span class="icon">⚠️</span> Hyrule Countdown
+    </header>
+
+    <div class="hero">
+      <div class="location-badge">
+        <small>LOCATION</small>
+        <span>Great Plateau</span>
+      </div>
+      <img src="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1000&auto=format&fit=crop" alt="Forest" class="bg-img">
+    </div>
+
+    <div class="content">
+      <h1 class="title">A New Dawn<br><span class="highlight">Approaches</span></h1>
+      <p class="subtitle">The Blood Moon rises once again...</p>
+
+      <div class="triforce">
+        <div class="tri top"></div>
+        <div class="tri left"></div>
+        <div class="tri right"></div>
+      </div>
+
+      <div class="timer-grid">
+        <div class="time-unit">
+          <div class="circle">{{ days() | number:'2.0' }}</div>
+          <span>DAYS</span>
+        </div>
+        <div class="time-unit">
+          <div class="circle">{{ hours() | number:'2.0' }}</div>
+          <span>HOURS</span>
+        </div>
+        <div class="time-unit">
+          <div class="circle">{{ minutes() | number:'2.0' }}</div>
+          <span>MINS</span>
+        </div>
+        <div class="time-unit">
+          <div class="circle">{{ seconds() | number:'2.0' }}</div>
+          <span>SECS</span>
+        </div>
+      </div>
+
+      <div class="quote-box">
+        <p>"It's dangerous to go alone! Take this courage into the New Year."</p>
+      </div>
+
+      <button 
+        class="chest-btn" 
+        [disabled]="!isNewYear()"
+        [class.active]="isNewYear()"
+        (click)="openChest()">
+        <span *ngIf="!isNewYear()">🔒 LOCKED UNTIL MIDNIGHT</span>
+        <span *ngIf="isNewYear()">🔓 OPEN NEW YEAR'S CHEST</span>
+      </button>
+    </div>
+
+  </div> <!-- End main-interface -->
+</div>
