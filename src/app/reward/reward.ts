@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-reward',
   imports: [],
   templateUrl: './reward.html',
-  styleUrl: './reward.css',
+  styleUrl: './reward.scss',
 })
 export class Reward {
 

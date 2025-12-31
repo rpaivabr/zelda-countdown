@@ -1,0 +1,1 @@
+:root{--zelda-bg: #1C1A15;--zelda-gold: #E6C84F;--zelda-gold-dim: #947F30;--zelda-glow: 0 0 10px rgba(230, 200, 79, .5);--zelda-white: #F5F5F5;--font-serif: "Cinzel", serif;--font-sans: "Lato", sans-serif}body{margin:0;background-color:var(--zelda-bg);color:var(--zelda-white);font-family:var(--font-sans);display:flex;justify-content:center;min-height:100vh}

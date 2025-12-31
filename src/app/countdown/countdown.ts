@@ -7,12 +7,12 @@ import { interval, Subscription } from 'rxjs';
   selector: 'app-countdown',
   imports: [CommonModule],
   templateUrl: './countdown.html',
-  styleUrl: './countdown.css',
+  styleUrl: './countdown.scss',
 })
 export class Countdown {
   // Target: New Year's of the next year
-  // targetDate = new Date(new Date().getFullYear() + 1, 0, 1).getTime(); 
-  targetDate = new Date('2025-12-30T21:43:00').getTime();
+  targetDate = new Date(new Date().getFullYear() + 1, 0, 1).getTime(); 
+  // targetDate = new Date('2025-12-30T21:43:00').getTime();
   
   // For testing, uncomment this to set target to 10 seconds from now:
   // targetDate = new Date().getTime() + 10000;
@@ -68,7 +68,7 @@ export class Countdown {
     this.openChestSound.load(); 
     
     // 2. Play the first tick immediately
-    this.tickSound.play().catch(e => console.error("Audio error:", e));
+    // this.tickSound.play().catch(e => console.error("Audio error:", e));
 
     // 3. Start the interval loop
     this.timerSub = interval(100).subscribe(() => {
